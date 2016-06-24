@@ -4,7 +4,7 @@
 * @Author: sahildua2305
 * @Date:   2016-06-24 20:20:19
 * @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-06-25 02:34:47
+* @Last Modified time: 2016-06-25 02:42:38
 */
 
 'use strict'
@@ -27,8 +27,8 @@ const reportIssue = () => {
   process.exit(-1)
 }
 
-const copyrights = () => {
-  console.log(chalk.green('Copyrights © Sahil Dua (sahildua2305)'))
+const contributeLink = () => {
+  console.log(chalk.yellow('Contribute to this project - https://github.com/sahildua2305/github-check-cli'))
 }
 
 const argv = yargs
@@ -86,7 +86,7 @@ const argv = yargs
           console.log(chalk.cyan('GitHub Profile Link: ') + userInfo.html_url)
         console.log(userInfoTable.toString())
 
-        copyrights()
+        contributeLink()
         process.exit(-1)
       }
     })
