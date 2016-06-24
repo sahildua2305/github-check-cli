@@ -4,7 +4,7 @@
 * @Author: sahildua2305
 * @Date:   2016-06-24 20:20:19
 * @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-06-25 02:42:38
+* @Last Modified time: 2016-06-25 02:57:54
 */
 
 'use strict'
@@ -31,9 +31,15 @@ const contributeLink = () => {
   console.log(chalk.yellow('Contribute to this project - https://github.com/sahildua2305/github-check-cli'))
 }
 
+const apiLimitCrossed = (message, reset) => {
+  console.log(chalk.magenta.bold(message))
+  contributeLink()
+  process.exit(-1)
+}
+
 const argv = yargs
   .usage('Usage: $0 <cmd> [args]')
-  .command('user', 'welcome', function (yargs) {
+  .command('user', 'Check GitHub information for any user', function (yargs) {
     const argv = yargs
       .usage('Usage: $0 user <github_username>')
       .demand(2)
@@ -56,7 +62,7 @@ const argv = yargs
         console.log('Error!')
       }
       else {
-        console.log(response.body)
+        // console.log(response.body)
         console.log(response.caseless.get('x-ratelimit-remaining'))
 
         if (response.caseless.get('status') == '404 Not Found') {
@@ -64,6 +70,12 @@ const argv = yargs
         }
 
         const userInfo = JSON.parse(response.body)
+
+        if (response.caseless.get('status') == '403 Forbidden') {
+          var msg = userInfo.message.split('(')[0]
+          apiLimitCrossed(msg, response.caseless.get('x-ratelimit-reset'))
+        }
+
 
         var userInfoTable = new Table({
           head: ['Followers', 'Public Repos', 'Following'],
