@@ -1,0 +1,38 @@
+{
+  "name": "github-check-cli",
+  "version": "0.0.0",
+  "description": "Command line tool for checking GitHub profile and repos information",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahildua2305/github-check-cli"
+  },
+  "author": {
+    "name": "Sahil Dua",
+    "email": "sahildua2305@gmail.com",
+    "url": "http://sahildua.com"
+  },
+  "engine": {
+    "node" : ">=0.10"
+  },
+  "scripts": {
+    "test": "exit 1"
+  },
+  "bin": {
+    "github-check": "cli.js"
+  },
+  "keywords": [
+    "github",
+    "cli",
+    "github-check",
+    "command",
+    "line",
+    "tool"
+  ],
+  "dependencies": {
+    "chalk": "*",
+    "fs": "*",
+    "request": "*",
+    "yargs": "4.7.1"
+  }
+}
