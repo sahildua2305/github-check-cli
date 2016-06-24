@@ -1,7 +1,7 @@
 {
   "name": "github-check-cli",
-  "version": "0.0.0",
-  "description": "CLI for checking GitHub profile and repos information",
+  "version": "1.0.0",
+  "description": "CLI for checking GitHub user profile and repositories information",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
     "test": "exit 1"
   },
   "bin": {
+    "github": "cli.js",
     "github-check": "cli.js"
   },
   "keywords": [
@@ -27,7 +28,13 @@
     "github-check",
     "command",
     "line",
-    "tool"
+    "tool",
+    "repos",
+    "repositories",
+    "user",
+    "profile",
+    "info",
+    "information"
   ],
   "dependencies": {
     "request": "*",
