@@ -32,6 +32,7 @@
   "dependencies": {
     "request": "*",
     "yargs": "4.7.1",
-    "ora": "*"
+    "ora": "*",
+    "cli-table": "*"
   }
 }
