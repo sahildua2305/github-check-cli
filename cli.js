@@ -4,7 +4,7 @@
 * @Author: sahildua2305
 * @Date:   2016-06-24 20:20:19
 * @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-06-25 03:54:38
+* @Last Modified time: 2016-06-25 04:34:41
 */
 
 'use strict'
@@ -52,6 +52,11 @@ const apiLimitCrossed = (message, reset) => {
   process.exit(-1)
 }
 
+const requestFailed = () => {
+  console.log(chalk.red.bold('Unable to fetch information from GitHub'))
+  reportIssue()
+}
+
 const argv = yargs
   .usage('Usage: $0 <cmd> [args]')
   .command('user', 'Check GitHub information for any user', function (yargs) {
@@ -62,7 +67,7 @@ const argv = yargs
       .argv
 
     var username = argv._[1]
-    const spinner = ora('Accessing GitHub').start()
+    const spinner = ora('Fetching information from GitHub').start()
 
     var options = {
       url: BASE_URL + 'users/' + username,
@@ -74,12 +79,9 @@ const argv = yargs
     request.get(options, function (err, response) {
       spinner.stop()
       if (err) {
-        console.log('Error!')
+        requestFailed()
       }
       else {
-        // console.log(response.body)
-        console.log(response.caseless.get('x-ratelimit-remaining'))
-
         const userInfo = JSON.parse(response.body)
 
         check403(response, userInfo)
@@ -102,6 +104,10 @@ const argv = yargs
           console.log(chalk.cyan('Full Name: ') + userInfo.name)
         if (userInfo.bio)
           console.log(chalk.cyan('Profile Bio: ') + userInfo.bio)
+        if (userInfo.blog)
+          console.log(chalk.cyan('Website Link: ') + userInfo.blog)
+        if (userInfo.location)
+          console.log(chalk.cyan('User Location: ') + userInfo.location)
         if (userInfo.html_url)
           console.log(chalk.cyan('GitHub Profile Link: ') + userInfo.html_url)
         console.log(userInfoTable.toString())
@@ -132,12 +138,9 @@ const argv = yargs
     request.get(options, function (err, response) {
       spinner.stop()
       if (err) {
-        console.log('Error!')
+        requestFailed()
       }
       else {
-        console.log(response.body)
-        console.log(response.caseless.get('x-ratelimit-remaining'))
-
         const repoInfo = JSON.parse(response.body)
 
         check403(response, repoInfo)
