@@ -17,7 +17,7 @@ Commands:
   repo  Fetch information about any GitHub repository
 
 Options:
-  -h, --help  Show help                                                [boolean]
+  -h, --help  Show help                             [boolean]
   
 ```
 
@@ -26,7 +26,7 @@ Options:
 $ github user <github_username>
 
 Options:
-  -h, --help  Show help                                                [boolean]
+  -h, --help  Show help                             [boolean]
 
 Examples:
   $ github user sahildua2305
@@ -38,7 +38,7 @@ Examples:
 $ github repo <repo_owner_username> <repo_name>
 
 Options:
-  -h, --help  Show help                                                [boolean]
+  -h, --help  Show help                             [boolean]
 
 Examples:
   $ github repo sahildua2305 github-check-cli
