@@ -30,9 +30,8 @@
     "tool"
   ],
   "dependencies": {
-    "chalk": "*",
-    "fs": "*",
     "request": "*",
-    "yargs": "4.7.1"
+    "yargs": "4.7.1",
+    "ora": "*"
   }
 }
