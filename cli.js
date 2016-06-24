@@ -4,7 +4,7 @@
 * @Author: sahildua2305
 * @Date:   2016-06-24 20:20:19
 * @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-06-25 04:50:56
+* @Last Modified time: 2016-06-25 04:55:06
 */
 
 'use strict'
@@ -85,8 +85,8 @@ const requestFailed = () => {
 }
 
 const argv = yargs
-  .usage('Usage: $0 <cmd> [args]')
-  .command('user', 'Check GitHub information for any user', function (yargs) {
+  .usage('Usage: $0 <command> [arguments]')
+  .command('user', 'Fetch information about any GitHub user', function (yargs) {
     const argv = yargs
       .usage('Usage: $0 user <github_username>')
       .demand(2)
@@ -156,7 +156,7 @@ const argv = yargs
       }
     })
   })
-.command('repo', 'Check GitHub information for any repo', function (yargs) {
+.command('repo', 'Fetch information about any GitHub repository', function (yargs) {
     const argv = yargs
       .usage('Usage: $0 repo <repo_owner_username> <repo_name>')
       .demand(3)
