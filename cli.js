@@ -4,7 +4,7 @@
 * @Author: sahildua2305
 * @Date:   2016-06-24 20:20:19
 * @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-06-25 02:23:27
+* @Last Modified time: 2016-06-25 02:34:47
 */
 
 'use strict'
@@ -25,6 +25,10 @@ const userNotFound = () => {
 const reportIssue = () => {
   console.log(chalk.yellow('If you think something is wrong, please open an issue at https://github.com/sahildua2305/github-check-cli/issues'))
   process.exit(-1)
+}
+
+const copyrights = () => {
+  console.log(chalk.green('Copyrights © Sahil Dua (sahildua2305)'))
 }
 
 const argv = yargs
@@ -82,11 +86,12 @@ const argv = yargs
           console.log(chalk.cyan('GitHub Profile Link: ') + userInfo.html_url)
         console.log(userInfoTable.toString())
 
+        copyrights()
         process.exit(-1)
       }
     })
   })
   .help('help')
   .alias('h', 'help')
-  .epilog('Copyrights Sahil Dua (sahildua2305) 2016')
+  .epilog('Copyrights © Sahil Dua (sahildua2305)')
   .argv
