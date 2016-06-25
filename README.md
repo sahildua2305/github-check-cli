@@ -3,6 +3,10 @@
 
 > CLI for checking GitHub user profile and repositories information
 
+
+## Demo
+![Demo GitHub Check CLI](extras/demo-github-check-cli.gif)
+
 ## Install
 ```
 $ npm install -g github-check-cli
