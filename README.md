@@ -1,5 +1,5 @@
 # github-check-cli
-[![npm version](https://badge.fury.io/js/github-check-cli.svg)](https://www.npmjs.com/package/github-check-cli) [![npm](https://img.shields.io/npm/dt/github-check-cli.svg?maxAge=2592000)](https://www.npmjs.com/package/github-check-cli)
+[![npm version](https://badge.fury.io/js/github-check-cli.svg)](https://www.npmjs.com/package/github-check-cli) [![npm](https://img.shields.io/npm/dt/github-check-cli.svg?maxAge=86400)](https://www.npmjs.com/package/github-check-cli)
 
 > CLI for checking GitHub user profile and repositories information
 
