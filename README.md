@@ -5,7 +5,7 @@
 
 
 ## Demo
-![Demo GitHub Check CLI](extras/demo-github-check-cli.gif)
+![Demo GitHub Check CLI](extras/demo-github-check-cli.gif?raw=true)
 
 ## Install
 ```
