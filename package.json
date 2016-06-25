@@ -1,6 +1,6 @@
 {
   "name": "github-check-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI for checking GitHub user profile and repositories information",
   "license": "MIT",
   "repository": {
